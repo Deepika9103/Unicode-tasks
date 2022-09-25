@@ -1,0 +1,188 @@
+#cards {
+    padding: 0%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#pi {
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#pic {
+    border: 10px solid darkgray;
+    border-radius: 20px;
+}
+
+table,
+td {
+    padding: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 1cm;
+    width: auto;
+    font-size: 20px;
+    border: 2px solid darkgray;
+    color: lightcoral;
+}
+
+td {
+    background-color: maroon;
+    border-style: inset;
+}
+
+#edu {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#edu1 {
+    padding: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#awards {
+    padding: 0%;
+    margin-left: 6%;
+    margin-right: 6%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ame {
+    padding: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    /* justify-content:center;
+    flex-direction: row;
+    flex-wrap: wrap; */
+}
+
+#ps,
+#frame {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+img {
+    border: 5px solid darkgray;
+    border-radius: 20px;
+}
+
+#info {
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: navy;
+}
+
+#cd,
+#sp,#ss1{
+    padding: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#heading {
+    font-weight: bolder;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightcoral;
+}
+
+#topic {
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 130%;
+}
+
+#descr {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 120%;
+}
+
+.maincontainer
+{
+    width: 302px;
+    height: 299px;
+    margin: 10px;
+    float: left; /* stack each div horizontally */
+}
+
+.back h2
+{
+    position: absolute;
+}
+
+.back p
+{
+    position: absolute;
+    top: 50px;
+    font-size: 15px;
+}
+
+.front h2
+{
+    position: absolute;
+    padding: 10px;
+    top: 200px;
+    color: #000;
+}
+
+/* style the maincontainer class with all child div's of class .front */
+.maincontainer > .front
+{
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    
+    width: 302px;
+    height: 290px;
+    
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+/* style the maincontainer class with all child div's of class .back */
+.maincontainer > .back
+{
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: #262626;
+    color: #fff;
+    width: 302px;
+    height: 290px;
+    border-radius: 10px;
+    padding: 5px;
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+.maincontainer:hover > .front
+{
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.maincontainer:hover > .back
+{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+  }
