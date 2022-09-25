@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <table class="table" id="info">
+            <tr>
+              <th>Country Name</th>
+              <th>Cases</th>
+              <th>Deaths</th>
+              <th>Total Recovered</th>
+            </tr>
+          <tbody id="data">
+      
+          </tbody>
+        </table>
+      </div>
+    <script> const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '09b9dfadb2mshf5ba1c16d320933p127796jsn5e4b856101ec',
+            'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
+        }
+    };
+
+    fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options).then(
+        res => {
+          res.json().then(
+            data => {
+              console.log(data);
+              console.log(data.countries_stat);
+              
+      
+                var temp = "";
+                data.countries_stat.forEach((country) => {
+                  temp += "<tr>";
+                  temp += "<td>" + country.country_name + "</td>";
+                  temp += "<td>" + country.cases + "</td>";
+                  temp += "<td>" + country.deaths + "</td>";
+                  
+                  temp += "<td>" + country.total_recovered + "</td></tr>";
+                  
+                });
+                document.getElementById('data').innerHTML = temp;
+              
+            }
+          )
+        }
+      )</script>
+</body>
+</html>
